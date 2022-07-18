@@ -1,0 +1,14 @@
+{
+  "name": "plain-express-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r253hmdryou/plain-express-typescript.git"
+  },
+  "author": "r253hmdryou",
+  "license": "MIT",
+  "scripts": {
+  }
+}
