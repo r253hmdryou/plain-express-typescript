@@ -42,6 +42,11 @@ function createApp(): express.Express {
  * @returns void
  */
 function gracefulShutdown(server: http.Server): void {
-	server.close();
-	process.exit(0);
+	server.close((error) => {
+		if (error) {
+			console.error(error);
+			process.exit(1);
+		}
+		process.exit(0);
+	});
 }
