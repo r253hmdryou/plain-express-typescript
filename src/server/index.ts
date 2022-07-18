@@ -1,3 +1,4 @@
+import http from "http";
 import express from "express";
 
 main();
@@ -9,7 +10,15 @@ main();
 function main(): void {
 	const app = createApp();
 
-	app.listen(3000);
+	const server = app.listen(3000);
+
+	process
+		.on("SIGINT", () => {
+			gracefulShutdown(server);
+		})
+		.on("SIGTERM", () => {
+			gracefulShutdown(server);
+		});
 }
 
 /**
@@ -25,4 +34,19 @@ function createApp(): express.Express {
 		.get("/", (_req, res) => {
 			res.send("Hello World!");
 		});
+}
+
+/**
+ * gracefulShutdown function
+ * @param server http server
+ * @returns void
+ */
+function gracefulShutdown(server: http.Server): void {
+	server.close((error) => {
+		if (error) {
+			console.error(error);
+			process.exit(1);
+		}
+		process.exit(0);
+	});
 }
