@@ -13,7 +13,7 @@ function main(): void {
 }
 
 /**
- *
+ * createApplication function
  * @returns express application
  */
 function createApp(): express.Express {
