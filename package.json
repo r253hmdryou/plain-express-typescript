@@ -9,6 +9,9 @@
   },
   "author": "r253hmdryou",
   "license": "MIT",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "start": "node dist/index.js",
