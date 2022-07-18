@@ -15,8 +15,14 @@ install dependencies packages
 npm ci
 ```
 
+build
+
+```bash
+npm run build
+```
+
 start server
 
 ```bash
-npm start
+npm run start
 ```
