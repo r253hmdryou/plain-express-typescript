@@ -15,14 +15,14 @@ install dependencies packages
 npm ci
 ```
 
-build
+start server in docker
 
 ```bash
-npm run build
+docker-compose up -d --build
 ```
 
-start server
+test
 
 ```bash
-npm run start
+npm run test
 ```
